@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border-radius: 25px;
+            border: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+        input[type="submit"], input[type="button"] {
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-links {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .nav-links a {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="imagesearch.html">Image Search</a>
+        <a href="advancedsearch.html">Advanced Search</a>
+    </div>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q" placeholder="Search Google">
+        <br>
+        <input type="submit" value="Google Search">
+        <input type="button" value="I'm Feeling Lucky" onclick="luckySearch()">
+    </form>
+
+    <script>
+        function luckySearch() {
+            const query = document.querySelector('input[name="q"]').value;
+            window.location.href = `https://www.google.com/search?q=${query}&btnI=I`;
+        }
+    </script>
+</body>
+</html>
